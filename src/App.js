@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { Switch, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import DiscoverPage from "./components/DiscoverPage"
+import MovieDetails from './components/MovieDetails';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Movie App</h1>
+      <Link to="/discover">
+        <button>Search Movies</button>
+      </Link>
+      <Switch>
+        {/* define what the params are called :id or :banana */}
+        <Route path="/movie/:id" component={MovieDetails}/>
+        <Route path="/discover" component={DiscoverPage} />
+      </Switch>
     </div>
   );
 }
