@@ -12,6 +12,7 @@ export default function MovieDetails(){
   // const params = useParams()
   // const id = params.id
 
+  //it's id because we defined it in App.js
   const { id } = useParams()
 
   // steps of fetching data
@@ -19,6 +20,7 @@ export default function MovieDetails(){
   // 2. make a GET request with axios
   // 3. console.log the response to see what you get
   // 4. put the data in the state => setState(response.data), for example
+  // 5. call the function inside useEffect
 
   const fetchData = async () => {
     const response = await axios.get(`https://omdbapi.com/?apikey=b570b2ca&i=${id}`)
