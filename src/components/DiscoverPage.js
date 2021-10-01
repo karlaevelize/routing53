@@ -7,6 +7,9 @@ import axios from "axios"
 export default function DiscoverPage(){
 
   const [ searchText, setSearchText] = useState("")
+  //initial state is an [] so the map doesn't break
+  //else you need conditional rendering
+  //always nice to add conditional rendering
   const [ movies, setMovies ] = useState([])
 
   const fetchData = async () => {
